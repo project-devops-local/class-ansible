@@ -1,0 +1,3 @@
+tener en cuenta --privileged y /usr/sbin/init procesos de systemctl
+docker run --privileged --name prueba-centos -d -it  -p 80:8181 centos:7 /usr/sbin/init
+

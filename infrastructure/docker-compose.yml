@@ -1,0 +1,24 @@
+version: '3.9'
+services: 
+  centos1:
+    container_name: centos1
+    image: centos1
+    build:
+      context: centos1
+    volumes: 
+      - $PWD/centos1/data:/home/centos1
+    privileged: true
+    ports: 
+      - "8080:8080"
+    networks: 
+      - net
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: 1000M
+        reservations:
+          cpus: '0.50'
+          memory: 500M
+networks: 
+  net:

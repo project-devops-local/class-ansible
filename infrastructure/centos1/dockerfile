@@ -1,0 +1,10 @@
+FROM centos:7
+
+RUN yum -y install openssh-server
+
+RUN useradd centos1 && \
+    echo "1234" | passwd centos1  --stdin 
+
+RUN ssh-keygen -A
+
+CMD /usr/sbin/sshd -D
