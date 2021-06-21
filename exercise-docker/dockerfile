@@ -1,0 +1,12 @@
+FROM centos:7
+
+RUN yum update -y && yum upgrade -y
+RUN yum install vim -y
+RUN yum install python3 -y
+RUN mkdir /root/carpetaPrueba && \
+    chmod 777 /root/carpetaPrueba
+
+COPY texto-prueba.txt /root/carpetaPrueba
+WORKDIR /root/carpetaPrueba
+
+CMD [ "/usr/sbin/init"]
