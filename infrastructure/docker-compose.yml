@@ -1,4 +1,4 @@
-version: '3.9'
+version: '3.0'
 services: 
   centos1:
     container_name: centos1
@@ -16,9 +16,6 @@ services:
       resources:
         limits:
           cpus: '1.0'
-          memory: 1000M
-        reservations:
-          cpus: '0.50'
-          memory: 500M
+          memory: 2000M
 networks: 
   net:
