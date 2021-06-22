@@ -5,4 +5,8 @@ docker run --privileged --name prueba-centos -d -it --memory=500m -p 8182:8181 l
 comando para generar imagen en base a un dockerfile o url
 docker build -t laboratorio-docker:v1 url o .
 
-
+comandos networking
+docker network ls --->listar tipos de redes 
+docker network inspect bridge
+docker network create --subnet 10.130.2.0/24 --gateway 10.130.1.254 red1
+docker run --name red2 -itd -h myhost2 --network red1 centos:7

@@ -1,8 +1,9 @@
-version: '3.0'
+version: '3.9'
 services: 
   centos1:
     container_name: centos1
     image: centos1
+    hostname: pruebaHost
     build:
       context: centos1
     volumes: 
@@ -10,12 +11,12 @@ services:
     privileged: true
     ports: 
       - "8080:8080"
-    networks: 
-      - net
     deploy:
       resources:
         limits:
           cpus: '1.0'
           memory: 2000M
-networks: 
-  net:
+networks:
+  default:
+    external: true
+    name: red1
