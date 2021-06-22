@@ -1,0 +1,13 @@
+pwd
+exit
+systemctl
+exit
+clear
+ls
+ls}
+pwd
+exit
+ls
+exit
+pwd
+exit

@@ -7,4 +7,5 @@ RUN useradd centos1 && \
 
 RUN ssh-keygen -A
 
-CMD /usr/sbin/sshd -D
+
+CMD ["/usr/sbin/init"]
