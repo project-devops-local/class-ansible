@@ -12,7 +12,7 @@ docker build -t laboratorio-docker:v1 url o .
 #comandos networking
 docker network ls ---> listar tipos de redes 
 docker network inspect bridge -> inspecionar red existente
-docker network create --subnet 10.130.2.0/24 --gateway 10.130.1.254 red1 -> crear red bridge definiendo un rango de ips
+docker network create --subnet 10.130.2.0/24 --gateway 10.130.2.254 red1 -> crear red bridge definiendo un rango de ips
 docker network connect red1 container -> vincular red a un contenedor existente
 docker run --name red2 -itd -h myhost2 --network red1 centos:7
 
