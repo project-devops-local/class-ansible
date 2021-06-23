@@ -30,8 +30,8 @@ docker run --name pruebalink2 -itd centos:7
 docker run --name pruebalink3 --link pruebalink -itd centos:7 -> asociar contenedor pruebalink para realizar conexion ping nameContainer
 
 #configurando puertos en los contenedores
-docker run --privileged --name pruebaPort -itd --expose 22 --expose 443 --expose 80 -P debian
-docker run --privileged --name pruebaPort2 -itd  -p 8080:80 -p 8181:8081 debian
+docker run --privileged --name pruebaPort -itd --expose 22 --expose 443 --expose 80 -P ubuntu /bin/bash
+docker run --privileged --name pruebaPort2 -itd  -p 8080:80  ubuntu /bin/bash
 
 docker port container -> lista los puertos expuestos del contenedor
 
