@@ -1,21 +1,44 @@
 version: '3.9'
 services: 
+  ansible:
+    container_name: ansible
+    image: ansible:v1
+    hostname: ansible
+    build:
+      context: ansible
+    ports: 
+      - "8081:80"
+    volumes: 
+      - $PWD/ansible/data:/home/ansible
+    privileged: true
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: 2000M
+    networks: 
+      default:
+        ipv4_address: 10.130.2.130
+
   centos1:
     container_name: centos1
     image: centos1
-    hostname: pruebaHost
+    hostname: centos1
     build:
       context: centos1
     volumes: 
       - $PWD/centos1/data:/home/centos1
     privileged: true
     ports: 
-      - "8080:8080"
+      - "8083:8080"
     deploy:
       resources:
         limits:
           cpus: '1.0'
           memory: 2000M
+    networks: 
+      default:
+        ipv4_address: 10.130.2.31
 networks:
   default:
     external: true
