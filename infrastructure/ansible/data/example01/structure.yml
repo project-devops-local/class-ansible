@@ -1,0 +1,8 @@
+---
+- name: estructura ansible
+  hosts: localhost
+  connection: local
+  tasks:
+  - name: mi primera interaccion en ansible
+    debug:
+      var: ansible_facts.memory_mb.nocache.free

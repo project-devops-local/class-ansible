@@ -31,3 +31,6 @@ ls -ltra
 echo "sdfsdf" > asersd.txt
 cat asersd.txt 
 exit
+sudo yum update -y
+clear
+exit

@@ -1,0 +1,11 @@
+---
+all:
+  children:
+    centos:
+      hosts:
+        centos1:
+          ansible_user: centos1
+          ansible_password: 1234
+        centos2:
+          ansible_user: centos2
+          ansible_password: 1234
