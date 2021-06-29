@@ -1,0 +1,17 @@
+---
+- name: comandos utiles para ejeuctar el playbook
+  hosts: localhost
+  connection: local
+  gather_facts: no
+  tasks:
+    - name: primera tarea
+      debug:
+        msg: hola este es mi mensaje 11223
+    
+    - name: segunda tarea
+      debug:
+        msg: "hola este es mi mensaje 2"
+
+    - name: tercera tarea
+      debug: 
+        msg: "hola este es mi mensaje 3"

@@ -1,0 +1,32 @@
+---
+- name: tipos de variables
+  hosts: localhost
+  connection: local
+  gather_facts: yes
+  vars:
+    - ip: "10.20"
+    - lista: ["num1","num2","pepito"]
+    - listaAsociativa:
+        - { name: 'object1', id: '1234' }
+        - { name: 'object2', id: '4512' }
+  tasks:
+    - name: iterar variable
+      debug:
+        msg: "{{ ip }}"
+      vars:
+        - ip: "{{ item }}"
+      loop: "{{ lista }}"
+
+    - name: crear archivos en base a lista
+      template:
+        src: variables.txt.j2
+        dest: "/tmp/{{ prueba }}.txt"
+      vars:
+        - prueba: "{{ item }}"
+        - ip: "{{ item }}"
+      loop: "{{ lista }}"
+
+    - name: iterar variables asociativas
+      debug:
+        msg: "variables a iterar {{ item.name }} {{ item.id }}"
+      loop: "{{ listaAsociativa }}"

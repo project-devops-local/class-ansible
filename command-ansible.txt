@@ -1,0 +1,15 @@
+-----------------------------------------------------------
+-------------   CLASE #3  29/06/2021   --------------------
+-----------------------------------------------------------
+#comandos utiles para iniciar en playbooks
+
+ansible-playbook playbook.yml ---> ejecucion del playbook basico
+ansible-playbook --systax-check playbook.yml ---> comprobar syntax ansible antes de ejecutar.
+ansible-playbook --list-task playbook.yml --> lista las tareas que tenga el playbook
+ansible-playbook --step playbook.yml ---> preguntar paso a paso 
+ansible-playbook --start-at-task="nombre tarea" playbook.yml ---> ejecuta las tareas donde se le especifique
+ansible-playbook -f 1 playbook.yml --> si las tareas van a varios servidores se realizara en 1 en 1 por defecto son 5 conexiones
+ansible-playbook  playbook.yml -vvvv
+
+#variables en ansible
+ansible-playbook --extra-vars="ip=10.78" variables.yml

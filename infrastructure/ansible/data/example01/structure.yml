@@ -2,7 +2,8 @@
 - name: estructura ansible
   hosts: localhost
   connection: local
+  gather_facts: no
   tasks:
-  - name: mi primera interaccion en ansible
-    debug:
-      var: ansible_facts.memory_mb.nocache.free
+    - name: mi primera interaccion en ansible
+      debug:
+        var: ansible_facts.env.HOSTNAME
