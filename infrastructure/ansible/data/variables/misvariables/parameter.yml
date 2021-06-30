@@ -1,0 +1,8 @@
+---
+pepito: "hola soy pepito"
+
+lista:
+  valor: "prueba variable"
+  name: "etiqueta name"
+  apellido: "pelaez"
+  server: "{{ server }}"

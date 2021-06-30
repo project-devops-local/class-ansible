@@ -1,6 +1,6 @@
 ---
 - name: comandos utiles para ejeuctar el playbook
-  hosts: localhost
+  hosts: all
   connection: local
   gather_facts: no
   tasks:
@@ -15,3 +15,7 @@
     - name: tercera tarea
       debug: 
         msg: "hola este es mi mensaje 3"
+
+    - name: cuarta tarea
+      debug: 
+        msg: "hola este es mi mensaje 4"

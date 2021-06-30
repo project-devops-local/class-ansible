@@ -1,0 +1,16 @@
+---
+- name: iteracion de variables
+  hosts: localhost
+  gather_facts: no
+  vars:
+   - ip: "10.130"
+  vars_files:
+    - misvariables/parameter.yml
+  tasks:
+    - name: imprimir variable ip
+      debug:
+        msg: "esta es mi ip {{ lista.valor }}  {{ lista.name }} {{ lista.apellido }}   "
+
+    - name: imprimir variable ip
+      debug:
+        msg: "esta es mi ip {{ lista.server }} "
