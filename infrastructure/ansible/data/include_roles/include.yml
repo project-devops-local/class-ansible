@@ -1,0 +1,13 @@
+---
+- name: ejemplo de include
+  hosts: centos2
+  remote_user: centos2
+  become: true
+  tasks:
+    - name: install vim
+      yum:
+        name: vim
+        state: latest
+
+    - include: tarea_extra.yml
+    

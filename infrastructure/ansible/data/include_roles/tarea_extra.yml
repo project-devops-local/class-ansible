@@ -1,0 +1,11 @@
+- name: tarea de prueba para la inclución
+  debug:
+    msg: "texto de prueba tarea de include"
+
+- name: tarea de prueba 2
+  debug:
+    msg: "tarea 2"
+
+- name: tarea de prueba 3
+  debug:
+    msg: "tarea 3"
