@@ -1,0 +1,12 @@
+FROM centos:7
+
+RUN yum -y install openssh-server
+     
+RUN useradd centos2 && \
+    echo "1234" | passwd centos2  --stdin 
+
+RUN ssh-keygen -A
+
+WORKDIR /home/centos2
+
+CMD ["/usr/sbin/init"]

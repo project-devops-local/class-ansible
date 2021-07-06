@@ -115,3 +115,48 @@ ansible --version
 cd
 pwd
 exit
+clear
+ls
+cd variables/
+ansible-playbook variables2.yml
+ansible-playbook --extra-vars="pepito=esto es desde afuera" variables2.yml
+ansible-playbook --extra-vars="pepito='kjsdfhfkjs sdf fsdfsdf'" variables2.yml
+ansible-playbook  variables2.yml
+ls
+cd ..
+ls
+ansible -i hosts -m ping 
+ansible -i hosts all -m ping 
+ls
+exit
+ls
+vi hosts 
+ansible -i hosts centos -m ping
+ssh centos2@centos2 
+ls
+ansible -i hosts centos -m ping
+
+vi hosts 
+ansible -i hosts centos -m ping
+exit
+ssh centos2@centos2
+ls
+cd httpd/
+ls
+ansible-playbook -i ../hosts apache.yml
+exit
+pwd
+ls
+cd httpd/
+ansible-playbook -i ../hosts apache.yml
+ansible-playbook -i ../hosts apache.yml -vvvvv
+clear
+ansible-playbook -i ../hosts apache.yml -vv
+ansible-playbook -i ../hosts apache.yml -vv
+ansible-playbook -i ../hosts apache.yml -vv
+ansible-playbook -i ../hosts apache.yml -vv
+ansible-playbook -i ../hosts apache.yml -vv
+ansible-playbook -i ../hosts apache.yml -vv
+ssh centos2@centos2 bash
+ssh centos2@centos2
+exit

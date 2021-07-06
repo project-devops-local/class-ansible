@@ -9,8 +9,10 @@
   tasks:
     - name: imprimir variable ip
       debug:
-        msg: "esta es mi ip {{ lista.valor }}  {{ lista.name }} {{ lista.apellido }}   "
-
-    - name: imprimir variable ip
+        msg: "esta es mi ip {{ pepito }}"
+    
+    - name: imprimir iterando
       debug:
-        msg: "esta es mi ip {{ lista.server }} "
+        msg: "{{ item.name }} --------> {{ item.id }}"
+      loop: "{{ listaAsociativa }}"
+    

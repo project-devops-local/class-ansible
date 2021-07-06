@@ -5,4 +5,8 @@ lista:
   valor: "prueba variable"
   name: "etiqueta name"
   apellido: "pelaez"
-  server: "{{ server }}"
+  server: "{{ ip }}"
+
+listaAsociativa:
+  - { name: 'object1', id: '1234' }
+  - { name: 'object2', id: '4512' }
