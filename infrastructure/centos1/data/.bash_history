@@ -34,3 +34,7 @@ exit
 sudo yum update -y
 clear
 exit
+sudo yum update -y
+exit
+sudo yum update -y
+exit

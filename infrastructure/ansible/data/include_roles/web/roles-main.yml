@@ -6,8 +6,5 @@
   roles:
     - apache2
     - html
-  tasks:
-    - name: tarea de prueba_ -_______---_______-
-      debug:
-        msg: "hola a todos"
+   
         

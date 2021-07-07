@@ -1,5 +1,5 @@
 [centos]
-centos1 ansible_user=centos1 ansible_sudo_pass=1234
+centos1 ansible_user=centos1 ansible_password=1234 ansible_sudo_pass=1234
 centos2 ansible_user=centos2 ansible_sudo_pass=1234 ansible_password=1234
 
 [ubuntu]
