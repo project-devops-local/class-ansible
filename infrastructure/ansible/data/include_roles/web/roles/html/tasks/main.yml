@@ -1,0 +1,6 @@
+---
+# tasks file for html
+- name: modificacion de plantilla html
+  template:
+    src: index.html.j2
+    dest: /var/www/html/index.html

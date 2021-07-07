@@ -59,7 +59,27 @@ services:
     networks: 
       default:
         ipv4_address: 10.130.2.200
+
+  ubuntu3:
+    container_name: ubuntu3
+    image: ubuntu3
+    hostname: ubuntu3
+    build:
+      context: ubuntu3
+    volumes: 
+      - $PWD/ubuntu3/data:/home/ubuntu
+    privileged: true
+    ports: 
+      - "8080:80"
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: 2000M
+    networks: 
+      default:
+        ipv4_address: 10.130.2.201
 networks:
   default:
-    external: true
+    external: true  
     name: red1

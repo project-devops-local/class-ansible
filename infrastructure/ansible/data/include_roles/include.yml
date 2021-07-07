@@ -1,8 +1,8 @@
 ---
 - name: ejemplo de include
   hosts: centos2
-  remote_user: centos2
-  become: true
+  become: yes
+  gather_facts: no
   tasks:
     - name: install vim
       yum:

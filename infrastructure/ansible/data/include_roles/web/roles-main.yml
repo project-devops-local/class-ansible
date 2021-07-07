@@ -1,0 +1,13 @@
+---
+- name: instalacion de apache2 en ubuntu
+  hosts: ubuntu3
+  remote_user: ubuntu
+  become: yes
+  roles:
+    - apache2
+    - html
+  tasks:
+    - name: tarea de prueba_ -_______---_______-
+      debug:
+        msg: "hola a todos"
+        

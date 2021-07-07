@@ -1,0 +1,17 @@
+FROM ubuntu:latest
+
+ENV DEBIAN_FRONTEND noninteractive
+RUN apt-get update && apt-get install  openssh-server sudo -y
+
+RUN useradd ubuntu && \
+    echo "ubuntu:1234" | chpasswd 
+
+RUN service ssh start
+
+RUN usermod -aG sudo ubuntu
+
+EXPOSE 22
+
+WORKDIR /home/ubuntu
+
+CMD ["/sbin/init"]

@@ -160,3 +160,32 @@ ansible-playbook -i ../hosts apache.yml -vv
 ssh centos2@centos2 bash
 ssh centos2@centos2
 exit
+ls
+ansible -i hosts ubuntu -m ping
+ssh ubuntu@ubuntu3
+clear
+pwd
+ansible -i hosts ubuntu -m ping
+cat hosts 
+vi 
+vi hosts 
+ansible -i hosts ubuntu -m ping
+ls
+cd include_roles/
+ls
+cd web/
+ls
+clear
+ls
+cd ..
+ls
+cd..
+ls
+cd ..
+ls
+ansible-playbook -i hosts include_roles/web/roles-main.yml 
+cat hosts 
+ansible-playbook -i hosts include_roles/web/roles-main.yml 
+ansible -i hosts ubuntu -m ping
+ansible-playbook -i hosts include_roles/web/roles-main.yml 
+exit
