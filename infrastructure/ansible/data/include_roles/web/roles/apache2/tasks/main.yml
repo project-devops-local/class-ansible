@@ -4,16 +4,12 @@
   apt:
     name: python3
     state: latest
-  register: python
 
 - name: instalacion de apache2
   apt:
     name: apache2
     state: latest
-
-- name: debug variable
-  debug:
-    var: python
+  
 
 - name: iniciar y habilitar apache
   service:
@@ -26,7 +22,7 @@
     src: apache2.conf
     dest: /etc/apache2/apache2.conf
   notify: restar_apache
-
+  
 - name: creador de playbook
   debug:
     msg: "{{ nombre }}"

@@ -38,3 +38,21 @@ sudo yum update -y
 exit
 sudo yum update -y
 exit
+cp /etc/ssh/sshd_config /home/centos1
+sudo cp /etc/ssh/sshd_config /home/centos1
+ls
+sudo chmod 777 sshd_config 
+ls
+pwd
+cd /etc/ssh
+ls
+cat sshd_config
+sudo cat sshd_config
+ls
+cd
+ls
+cd ..
+ls
+cd
+pwd
+exit

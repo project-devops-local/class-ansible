@@ -30,7 +30,7 @@ services:
       - $PWD/centos1/data:/home/centos1
     privileged: true
     ports: 
-      - "8083:8080"
+      - "8083:80"
     deploy:
       resources:
         limits:
