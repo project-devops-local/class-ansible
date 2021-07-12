@@ -7,6 +7,14 @@
     <title>Document</title>
 </head>
 <body style="background: burlywood;">
-    <h1 style="color: blue;">MI primera pagina {% if ansible_facts.distribution == "Centos" %} esto es de ubuntu {% endif %}</h1>
+    <h1>hola esto es una distribucion 
+    {% if ansible_facts.distribution == "Centos" %} 
+          esto es de <b style="color:red; font-size:50px;">Centos</b>
+        {% elif  ansible_facts.distribution == "Ubuntu" %}
+        esto es de <b style="color:red; font-size:50px;">Ubuntu</b>
+        {% else %}
+            no es ninguno de los 2 sistemas
+    {% endif %}
+    </h1>
 </body>
 </html>

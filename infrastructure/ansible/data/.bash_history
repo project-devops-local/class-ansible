@@ -189,3 +189,33 @@ ansible-playbook -i hosts include_roles/web/roles-main.yml
 ansible -i hosts ubuntu -m ping
 ansible-playbook -i hosts include_roles/web/roles-main.yml 
 exit
+clear
+ls
+cd include_roles/
+ls
+cd web/
+ls
+ansible-playbook -i ../../hosts roles-main.yml 
+ls
+cd ..
+ls
+cd..
+cd ..
+ls
+cd bucles/
+ls
+ansible-playbook -i ../hosts bucles.yml
+clear
+ls
+ansible-playbook -i ../hosts bucles.yml
+ls
+ansible-playbook -i ../hosts register.yml
+ansible-playbook -i ../hosts failed.yml 
+ls
+ansible-playbook -i ../hosts bucles.yml
+¿ls
+ls
+ansible-playbook -i ../hosts register.yml
+clear
+ansible-playbook -i ../hosts register.yml
+exit

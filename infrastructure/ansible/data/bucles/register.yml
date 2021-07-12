@@ -1,0 +1,35 @@
+---
+- name: validando con register
+  hosts: centos1
+  become: yes
+  gather_facts: no
+  tasks:
+    - name: ejecuar el comando apache
+      yum:
+        name: "{{ item }}"
+        state: latest
+      loop:
+        - httpd
+        - epel-release
+        - vim
+      register: salida
+
+    - name: visualizar variable
+      debug:
+        var: salida
+      when: salida.changed
+       
+    - name: comprobar si existe el fichero he ignoraro si no existe
+      command: ls archivo.txt
+      register: existencia
+      ignore_errors: true
+    
+    - name: pintar problemas de error
+      debug:
+        var:  existencia.stderr
+      when: existencia.failed 
+
+    - name: pintar si no ha fallado
+      debug:
+        var:  existencia
+      when: existencia.failed != true

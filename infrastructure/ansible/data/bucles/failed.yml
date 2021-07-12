@@ -1,0 +1,7 @@
+---
+- name: prueba failed_when
+  hosts: ubuntu3
+  tasks:
+  - name: consultar ip
+    command: ip a
+   

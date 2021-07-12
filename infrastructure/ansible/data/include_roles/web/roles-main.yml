@@ -2,14 +2,10 @@
 - name: instalacion de apache2 en ubuntu
   hosts: all
   become: yes
-  tasks:
-    - name: llamada del rol para ubuntu
-      include_role:
-        name: apache2
-      when: ansible_facts.distribution == "Ubuntu"
-
-    - name: llamada del rol para ubuntu
-      include_role:
-        name: html
-      when: ansible_facts.distribution == "Ubuntu"
+  vars:
+    variable: "sdfsdf"
+  roles:
+  - { role: apache2,when: ansible_facts.distribution == "Ubuntu" }
+  - { role: html,when: ansible_facts.distribution == "Ubuntu" }
+ 
 

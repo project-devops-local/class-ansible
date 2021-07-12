@@ -1,0 +1,54 @@
+---
+- name: iteracion con bucles
+  hosts: centos1
+  gather_facts: no
+  vars:
+    lista:
+      - pepito
+      - moska
+      - tomate
+    listaAsociativa:
+      - { name: "texto de prueba1", description: "description"}
+      - { name: "texto de prueba2", description: "description2"}
+
+    lista3: ["valor1","valor2","valor3"]
+  tasks: 
+    - name: iteracion con with items lopps ejemplo
+      debug:
+        msg: "{{ item }}"
+      with_items:
+        - dato1
+        - dato2
+        - dato3
+
+
+    - name: iteracion con  loops ejemplo
+      debug:
+        msg: "{{ item }}"
+      loop:
+        - loop1
+        - loop2
+        - loop3
+
+    - name: iteracion con  loops asociativo ejemplo
+      debug:
+        msg: "{{ item.name }} - {{ item.apellido }}"
+      loop:
+        - { name: "pepito", apellido: "perlaza" }
+        - { name: "andrea", apellido: "perez" }
+        - { name: "prueba", apellido: "prueba apellido" }
+
+    - name: iterar desde variables definidas
+      debug:
+        msg: "valor de la lista --> {{ item }}"
+      loop: "{{ lista }}"
+
+    - name: iterar desde variables asociativas
+      debug:
+        msg: "valor de la lista --> {{ item.name }} -{{ item.description }} "
+      loop: "{{ listaAsociativa }}"
+
+    - name: iterar desde variables []
+      debug:
+        msg: "valor de la lista[] --> {{ item }}"
+      loop: "{{ lista3 }}"
