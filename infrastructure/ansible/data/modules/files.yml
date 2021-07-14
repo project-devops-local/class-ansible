@@ -74,7 +74,7 @@
     #     host: smtp.gmail.com
     #     port: 587
     #     username: minero1.1995@gmail.com
-    #     password: tRlbr=fr3Blt
+    #     password: password
     #     to: maikolweb@gmail.com
     #     cc:
     #     - prv_mspelaezbetancur@ath.com.co
