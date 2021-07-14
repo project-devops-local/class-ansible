@@ -219,3 +219,18 @@ ansible-playbook -i ../hosts register.yml
 clear
 ansible-playbook -i ../hosts register.yml
 exit
+ls
+cd modules/
+ls
+ansible-playbook -i ../hosts files.yml
+pwd
+cd /tmp
+ls
+ls -ltra
+cd /home/ansible/modules
+ls
+ansible-playbook -i ../hosts files.yml
+clear
+ls
+ansible-playbook -i ../hosts files.yml
+exit

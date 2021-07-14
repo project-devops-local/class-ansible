@@ -1,0 +1,87 @@
+---
+- name: ejemplos de modulos de ficheros
+  hosts: centos1
+  gather_facts: no
+  become: yes
+  vars:
+    msg_email: "este es mi mensaje de subject"
+    body_email: "mensaje y contenido del body <h1 style='color:red'>hola mensaje de prueba</h1>"
+  tasks:
+    - name: modulo copy y generacion de backup
+      copy:
+        src: files/prueba.txt
+        dest: /tmp/
+        backup: yes
+      
+    # - name: modulo de file para dar permisos
+    #   file:
+    #     path: /tmp/prueba.txt
+    #     owner: ansible
+    #     state: file
+    
+    # - name: utlizando el modulo stast obtener informacion del fichero
+    #   stat:
+    #     path: /tmp/prueba.txt
+    #   register: datos
+
+    # - name: mostrar info obtenida del modulo stat
+    #   debug:
+    #     var: datos
+
+    # - name: modulo de fetch copiar archivos de servidor remoto
+    #   fetch:
+    #     src: /tmp/configuracion.properties
+    #     dest: destino_backup/
+    #     flat: yes
+
+
+    # - name: crear directorio
+    #   file:
+    #     path: /tmp/archivos
+    #     state: directory
+
+    # - name: descomprecion de empaquetados tar.xz
+    #   unarchive:
+    #     src: files/node-v14.17.0-linux-x64.tar.xz
+    #     dest: /tmp/archivos
+
+    # - name: descomprecion de empaquetados zip
+    #   unarchive:
+    #     src: files/pipeline.zip
+    #     dest: /tmp/archivos
+
+
+    # - name: utilizando el modulo lineinfile para modificar lines especificas de un fichero
+    #   lineinfile:
+    #     path: /tmp/configuracion.properties
+    #     regexp: "^url="
+    #     line: url=www.google.com.co
+      
+    # - name: utilizando el modulo lineinfile para modificar lines especificas de un fichero
+    #   lineinfile:
+    #     path: /tmp/configuracion.properties
+    #     regexp: "^line="
+    #     state: absent
+
+    # - name: utilizando el modulo lineinfile para modificar lines especificas de un fichero
+    #   lineinfile:
+    #     path: /tmp/configuracion.properties
+    #     insertafter: "^name="
+    #     line: apellido=perez perez
+
+    # - name: Sending an e-mail using Gmail SMTP servers
+    #   mail:
+    #     host: smtp.gmail.com
+    #     port: 587
+    #     username: minero1.1995@gmail.com
+    #     password: tRlbr=fr3Blt
+    #     to: maikolweb@gmail.com
+    #     cc:
+    #     - prv_mspelaezbetancur@ath.com.co
+    #     - maikolweb@gmail.com
+    #     attach:
+    #     - /tmp/configuracion.properties
+    #     subject: "{{ msg_email }}"
+    #     subtype: html
+    #     body: "{{ lookup('template', 'templates/mensaje.html.j2') }}"
+    #   delegate_to: centos1
