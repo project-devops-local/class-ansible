@@ -7,11 +7,11 @@
     msg_email: "este es mi mensaje de subject"
     body_email: "mensaje y contenido del body <h1 style='color:red'>hola mensaje de prueba</h1>"
   tasks:
-    - name: modulo copy y generacion de backup
-      copy:
-        src: files/prueba.txt
-        dest: /tmp/
-        backup: yes
+    # - name: modulo copy y generacion de backup
+    #   copy:
+    #     src: files/prueba.txt
+    #     dest: /tmp/
+    #     backup: yes
       
     # - name: modulo de file para dar permisos
     #   file:
@@ -54,8 +54,8 @@
     # - name: utilizando el modulo lineinfile para modificar lines especificas de un fichero
     #   lineinfile:
     #     path: /tmp/configuracion.properties
-    #     regexp: "^url="
-    #     line: url=www.google.com.co
+    #     regexp: "^line="
+    #     line: line=&&%%3#24??'0)'
       
     # - name: utilizando el modulo lineinfile para modificar lines especificas de un fichero
     #   lineinfile:
@@ -69,19 +69,25 @@
     #     insertafter: "^name="
     #     line: apellido=perez perez
 
-    # - name: Sending an e-mail using Gmail SMTP servers
-    #   mail:
-    #     host: smtp.gmail.com
-    #     port: 587
-    #     username: minero1.1995@gmail.com
-    #     password: tRlbr=fr3Blt
-    #     to: maikolweb@gmail.com
-    #     cc:
-    #     - prv_mspelaezbetancur@ath.com.co
-    #     - maikolweb@gmail.com
-    #     attach:
-    #     - /tmp/configuracion.properties
-    #     subject: "{{ msg_email }}"
-    #     subtype: html
-    #     body: "{{ lookup('template', 'templates/mensaje.html.j2') }}"
-    #   delegate_to: centos1
+    # - name: utilizando el modulo lineinfile para modificar lines especificas de un fichero
+    #   lineinfile:
+    #     path: /tmp/configuracion.properties
+    #     insertbefore: "^name="
+    #     line: apellido= pelaez
+
+    - name: Sending an e-mail using Gmail SMTP servers
+      mail:
+        host: smtp.gmail.com
+        port: 587
+        username: minero1.1995@gmail.com
+        password: tRlbr=fr3Blt
+        to: maikolweb@gmail.com
+        cc:
+        - prv_mspelaezbetancur@ath.com.co
+        - maikolweb@gmail.com
+        attach:
+        - /tmp/configuracion.properties
+        subject: "{{ msg_email }}"
+        subtype: html
+        body: "{{ lookup('template', 'templates/mensaje.html.j2') }}"
+      delegate_to: centos1
